@@ -1,16 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/App.css';
 
-function App() {
+import Quote from '../Components/Quote';
+import {quotes} from '../data/quotes';
+
+export default function App() {
+
+  let [shuffle, setShuffle] = useState(0);
+
+  const shuffleQuotes = () => {
+    let getRandomIndex = Math.floor(Math.random() * quotes.length);
+    setShuffle(shuffle = getRandomIndex);
+  }
+
   return (
     <div className="container">
-      <div id="quote-box">
-        <p className="quote">Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.</p>
-        <p className="name">Patrick McKenzie<span className="citation">Twitter</span><span className="year">2016</span></p>
-      </div>
-      <button id="loadQuote" >Show another quote</button>
+      <Quote 
+        key={quotes[shuffle]}
+        {...quotes[shuffle]}
+      />
+      <button id="loadQuote" onClick={shuffleQuotes}>Show another quote</button>
     </div>
   );
 }
-
-export default App;
