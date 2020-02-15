@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This is a remake of the team treehouse techdegree project 1 in React
+
 ## Available Scripts
 
 In the project directory, you can run:
